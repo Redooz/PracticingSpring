@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class IndexController {
     @GetMapping("/")
@@ -16,5 +19,17 @@ public class IndexController {
 
         model.addAttribute("car",car);
         return "index";
+    }
+
+    @GetMapping("/list")
+    public String list(Model model){
+        List<Car> cars = new ArrayList<>();
+        cars.add(new Car("JKL531","Fiat","500","Blue"));
+        cars.add(new Car("KFO203","Chevrolet","Corsa","White"));
+        cars.add(new Car("MCI104","Hyundai","i25","Green"));
+        cars.add(new Car("FPS120","Tesla","Roadster","Red"));
+
+        model.addAttribute("cars",cars);
+        return "list";
     }
 }
