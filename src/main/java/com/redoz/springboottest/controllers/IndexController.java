@@ -4,6 +4,7 @@ import com.redoz.springboottest.models.Car;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +32,18 @@ public class IndexController {
 
         model.addAttribute("cars",cars);
         return "list";
+    }
+
+    @GetMapping("/requests")
+    public String requests(){
+        return "requests";
+    }
+
+    @GetMapping("/string")
+    public String param(@RequestParam(defaultValue = "...")String text ,Model model){
+        String msg = "Your message is "+(text);
+
+        model.addAttribute("msg",msg);
+        return "see";
     }
 }
