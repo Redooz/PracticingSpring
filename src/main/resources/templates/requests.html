@@ -6,9 +6,12 @@
 </head>
 <body>
     <h1>Example of Requests</h1>
+    <h2>Request Param</h2>
     <ul>
         <li><a th:href="@{string/(text='Hi')}">"Hi" is the message that will be sent</a></li>
         <li><a th:href="@{string/(text='Bye')}">"Bye" is the message that will be sent</a></li>
+        <li><a th:href="@{multi-param/(text='Hi',number=8)}">"Hi" is the message that will be sent with 8 as a number</a></li>
+        <li><a th:href="@{multi-param/(text='Bye',number=10)}">"Bye" is the message that will be sent with 10 as a number</a></li>
     </ul>
 </body>
 </html>

@@ -11,6 +11,7 @@ import java.util.List;
 
 @Controller
 public class IndexController {
+
     @GetMapping("/")
     public String index(Model model, Car car){
         car.setLicensePlate("ABC123");
@@ -42,6 +43,14 @@ public class IndexController {
     @GetMapping("/string")
     public String param(@RequestParam(defaultValue = "...")String text ,Model model){
         String msg = "Your message is "+(text);
+
+        model.addAttribute("msg",msg);
+        return "see";
+    }
+
+    @GetMapping("/multi-param")
+    public String multiParam(@RequestParam String text, @RequestParam Integer number, Model model){
+        String msg = "Your message is "+text+" "+number;
 
         model.addAttribute("msg",msg);
         return "see";
