@@ -4,6 +4,7 @@ import com.redoz.springboottest.models.Car;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
@@ -50,6 +51,14 @@ public class IndexController {
 
     @GetMapping("/multi-param")
     public String multiParam(@RequestParam String text, @RequestParam Integer number, Model model){
+        String msg = "Your message is "+text+" "+number;
+
+        model.addAttribute("msg",msg);
+        return "see";
+    }
+
+    @GetMapping("/string/{text}/{number}")
+    public String variable(@PathVariable String text, @PathVariable Integer number, Model model){
         String msg = "Your message is "+text+" "+number;
 
         model.addAttribute("msg",msg);
