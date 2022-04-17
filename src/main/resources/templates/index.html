@@ -6,9 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
+    <link rel="stylesheet" th:href="@{css/styles.css}">
 </head>
 <body>
-    <h1>Your Car</h1>
-    <p th:text="${car.toString()}">Car's info</p>
+    <h1 class="tittleCar">Your Car</h1>
+    <img th:src="@{images/car.png}" alt="Car" title="Car Logo" width="300">
+    <p class="carInfo" th:text="${car.toString()}">Car's info</p>
 </body>
 </html>
