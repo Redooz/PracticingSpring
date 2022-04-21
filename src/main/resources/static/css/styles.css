@@ -1,0 +1,9 @@
+h1.tittleCar{
+    color: gold;
+    font-family: "MesloLGM Nerd Font",monospace;
+}
+
+p.carInfo{
+    color: black;
+    font-family: "Segoe UI", sans-serif;
+}
