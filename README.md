@@ -24,4 +24,4 @@ git clone https://github.com/Redooz/PracticingSpringThymeleaf.git
 ```
 ./mvnw.cmd package
 ```
-4. Once it finish the build will be located on /target
+4. Once it finish, the executable will be located on /target
